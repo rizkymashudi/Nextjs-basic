@@ -3,9 +3,10 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 
-import { ReactNode, children } from 'react';
+import { ReactNode } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
+import styles from './Layout.module.css';
 
 interface LayoutProps {
     children: ReactNode;
@@ -14,9 +15,9 @@ interface LayoutProps {
 export default function Layout(props: LayoutProps) {
   const { children } = props;
   return (
-    <div>
+    <div className={styles.container}>
       <Header />
-        <div>{children}</div>
+        <div className={styles.content}>{children}</div>
       <Footer />
     </div>
   );
